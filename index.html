@@ -14,36 +14,57 @@ body {
     background-size: cover;
 }
 
-.container {
-    padding: 20px;
+/* العنوان */
+.header {
+    color: #1f2a5a;
+    padding-top: 40px;
 }
 
+.header h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.header p {
+    margin: 5px 0 20px;
+    font-size: 16px;
+}
+
+/* ننزل البوكسات */
+.container {
+    margin-top: 120px;
+}
+
+/* البوكس */
 .card {
     background: white;
-    margin: 20px auto;
-    padding: 20px;
+    margin: 25px auto;
+    padding: 25px;
     border-radius: 20px;
     width: 85%;
     max-width: 400px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 h2 {
     color: #1f2a5a;
+    font-size: 18px;
 }
 
+/* العداد */
 .count {
-    font-size: 24px;
-    margin: 10px 0;
+    font-size: 22px;
+    margin: 15px 0;
     color: #333;
 }
 
+/* الزر */
 button {
-    background-color: #1f2a5a; /* نيلي */
+    background-color: #1f2a5a;
     color: white;
     border: none;
-    padding: 12px 25px;
-    border-radius: 10px;
+    padding: 12px 30px;
+    border-radius: 12px;
     font-size: 16px;
     cursor: pointer;
 }
@@ -57,23 +78,29 @@ button:disabled {
 
 <body>
 
+<!-- العنوان -->
+<div class="header">
+    <h1>التسبيحات الخاصة بصلاة الليل</h1>
+    <p>صدقة جارية</p>
+</div>
+
 <div class="container">
 
-    <!-- التسبيحة الاولى -->
+    <!-- الاولى -->
     <div class="card">
         <h2>استغفر الله ربي واتوب اليه</h2>
         <div class="count" id="count1">0 / 70</div>
         <button onclick="increment(1,70)">تسبيح</button>
     </div>
 
-    <!-- التسبيحة الثانية -->
+    <!-- الثانية -->
     <div class="card">
         <h2>هذا مقام العائذ بك من النار</h2>
         <div class="count" id="count2">0 / 7</div>
         <button onclick="increment(2,7)">تسبيح</button>
     </div>
 
-    <!-- التسبيحة الثالثة -->
+    <!-- الثالثة -->
     <div class="card">
         <h2>العفو</h2>
         <div class="count" id="count3">0 / 300</div>
@@ -87,6 +114,7 @@ let counters = [0,0,0];
 
 function increment(index, max) {
     let i = index - 1;
+
     if (counters[i] < max) {
         counters[i]++;
         document.getElementById("count"+index).innerText = counters[i] + " / " + max;
