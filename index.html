@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تسبيحات</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: url('https://i.imgur.com/NsPJPjn.jpeg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 20px;
+    width: 85%;
+    max-width: 400px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #1f2a5a;
+}
+
+.count {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #333;
+}
+
+button {
+    background-color: #1f2a5a; /* نيلي */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- التسبيحة الاولى -->
+    <div class="card">
+        <h2>استغفر الله ربي واتوب اليه</h2>
+        <div class="count" id="count1">0 / 70</div>
+        <button onclick="increment(1,70)">تسبيح</button>
+    </div>
+
+    <!-- التسبيحة الثانية -->
+    <div class="card">
+        <h2>هذا مقام العائذ بك من النار</h2>
+        <div class="count" id="count2">0 / 7</div>
+        <button onclick="increment(2,7)">تسبيح</button>
+    </div>
+
+    <!-- التسبيحة الثالثة -->
+    <div class="card">
+        <h2>العفو</h2>
+        <div class="count" id="count3">0 / 300</div>
+        <button onclick="increment(3,300)">تسبيح</button>
+    </div>
+
+</div>
+
+<script>
+let counters = [0,0,0];
+
+function increment(index, max) {
+    let i = index - 1;
+    if (counters[i] < max) {
+        counters[i]++;
+        document.getElementById("count"+index).innerText = counters[i] + " / " + max;
+    }
+
+    if (counters[i] === max) {
+        document.querySelectorAll("button")[i].disabled = true;
+    }
+}
+</script>
+
+</body>
+</html>
