@@ -14,32 +14,22 @@ body {
     background-size: cover;
 }
 
-/* ننزل البوكسات حتى تبين الصورة */
+/* ننزل العناصر حسب التصميم */
 .container {
-    margin-top: 180px;
+    margin-top: 260px;
 }
 
-/* البوكس */
-.card {
-    background: white;
-    margin: 25px auto;
-    padding: 25px;
-    border-radius: 20px;
-    width: 85%;
-    max-width: 400px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-h2 {
-    color: #1f2a5a;
-    font-size: 18px;
+/* كل تسبيحة */
+.item {
+    margin: 40px 0;
 }
 
 /* العداد */
 .count {
     font-size: 22px;
-    margin: 15px 0;
-    color: #333;
+    color: #1f2a5a;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 /* الزر */
@@ -47,8 +37,8 @@ button {
     background-color: #1f2a5a;
     color: white;
     border: none;
-    padding: 12px 30px;
-    border-radius: 12px;
+    padding: 14px 35px;
+    border-radius: 14px;
     font-size: 16px;
     cursor: pointer;
 }
@@ -64,23 +54,20 @@ button:disabled {
 
 <div class="container">
 
-    <!-- الاولى -->
-    <div class="card">
-        <h2>استغفر الله ربي واتوب اليه</h2>
+    <!-- الاول -->
+    <div class="item">
         <div class="count" id="count1">0 / 70</div>
         <button onclick="increment(1,70)">تسبيح</button>
     </div>
 
-    <!-- الثانية -->
-    <div class="card">
-        <h2>هذا مقام العائذ بك من النار</h2>
+    <!-- الثاني -->
+    <div class="item">
         <div class="count" id="count2">0 / 7</div>
         <button onclick="increment(2,7)">تسبيح</button>
     </div>
 
-    <!-- الثالثة -->
-    <div class="card">
-        <h2>العفو</h2>
+    <!-- الثالث -->
+    <div class="item">
         <div class="count" id="count3">0 / 300</div>
         <button onclick="increment(3,300)">تسبيح</button>
     </div>
